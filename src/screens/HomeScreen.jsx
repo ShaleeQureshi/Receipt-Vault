@@ -34,14 +34,14 @@ const HomePage = () => {
         <PrimaryButton
           text="Get Started"
           onPress={() => {
-            console.log('Get started');
+            navigation.navigate('SignUp');
           }}
         />
         <View style={styles.divider}>
           <SecondaryButton
             text="Login"
             onPress={() => {
-              console.log('Login');
+              navigation.navigate('Login');
             }}
           />
         </View>
