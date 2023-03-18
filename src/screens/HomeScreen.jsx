@@ -24,7 +24,7 @@ const HomePage = () => {
       marginTop: -10,
     },
     divider: {
-      marginTop: 10,
+      marginTop: 20,
     },
   });
   return (
