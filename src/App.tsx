@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {SplashScreen} from './screens';
+import {SplashScreen, HomeScreen} from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +13,13 @@ const App = () => {
           <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
             options={{
               headerShown: false,
             }}
