@@ -17,6 +17,8 @@ const PrimaryButton = props => {
     text: {
       color: '#ffffff',
       fontWeight: 'bold',
+      textAlignVertical: 'center',
+      alignSelf: 'center',
       fontSize: 30,
     },
   });

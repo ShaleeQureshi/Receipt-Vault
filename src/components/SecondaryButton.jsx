@@ -6,10 +6,10 @@ const SecondaryButton = props => {
     btn: {
       backgroundColor: '#272341',
       borderRadius: 100,
-      maxWidth: 371,
-      maxHeight: 71,
-      minWidth: 371,
-      minHeight: 71,
+      maxWidth: 300,
+      maxHeight: 50,
+      minWidth: 300,
+      minHeight: 50,
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
@@ -17,7 +17,9 @@ const SecondaryButton = props => {
     text: {
       color: '#ffffff',
       fontWeight: 'bold',
-      fontSize: 30,
+      fontSize: 20,
+      textAlignVertical: 'center',
+      alignSelf: 'center',
     },
   });
   return (
