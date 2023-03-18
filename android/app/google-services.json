@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "909335720874",
+    "project_id": "receiptvault-6b9f8",
+    "storage_bucket": "receiptvault-6b9f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909335720874:android:2321d8b9c9d72f0843f1d3",
+        "android_client_info": {
+          "package_name": "com.rv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909335720874-uiir73c824hgvh4ma6p2p78gkhrouoh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdi7Yrg44-47lgRhTniDPgJRCjz0ZpMEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909335720874-uiir73c824hgvh4ma6p2p78gkhrouoh8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "909335720874-ph7bbdrfj2db29j5i7ppd4tf79dn9k63.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.receiptVault"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909335720874:android:01b7bec131e8382b43f1d3",
+        "android_client_info": {
+          "package_name": "com.rvault"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909335720874-uiir73c824hgvh4ma6p2p78gkhrouoh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdi7Yrg44-47lgRhTniDPgJRCjz0ZpMEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909335720874-uiir73c824hgvh4ma6p2p78gkhrouoh8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "909335720874-ph7bbdrfj2db29j5i7ppd4tf79dn9k63.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.receiptVault"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
