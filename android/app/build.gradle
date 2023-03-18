@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+classpath 'com.google.gms:google-services:4.3.15'
 
 import com.android.build.OutputFile
 
