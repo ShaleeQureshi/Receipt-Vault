@@ -118,7 +118,7 @@ const LoginScreen = () => {
       console.log('Successfully logged in user');
       console.log(user);
       console.log('**** Redirecting to PostAuthHomeScreen ****');
-      navigation.navigate('PostAuthHomeScreen');
+      navigation.navigate('PostAuthHome');
     }
   };
 

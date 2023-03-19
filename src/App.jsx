@@ -7,6 +7,7 @@ import {
   LoginScreen,
   SignUpScreen,
   PostAuthHomeScreen,
+  VaultCodeScreen,
 } from './screens';
 
 const Stack = createNativeStackNavigator();
@@ -45,10 +46,19 @@ const App = () => {
             }}
           />
           <Stack.Screen
-            name="PostAuthHomeScreen"
+            name="PostAuthHome"
             component={PostAuthHomeScreen}
             options={{
               headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="VaultCode"
+            component={VaultCodeScreen}
+            options={{
+              title: 'VaultCode',
+              headerTransparent: true,
+              headerTintColor: '#000000',
             }}
           />
         </Stack.Navigator>
