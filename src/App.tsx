@@ -1,7 +1,13 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {SplashScreen, HomeScreen, LoginScreen, SignUpScreen} from './screens';
+import {
+  SplashScreen,
+  HomeScreen,
+  LoginScreen,
+  SignUpScreen,
+  PostAuthHomeScreen,
+} from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +40,13 @@ const App = () => {
           <Stack.Screen
             name="SignUp"
             component={SignUpScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="PostAuthHomeScreen"
+            component={PostAuthHomeScreen}
             options={{
               headerShown: false,
             }}
