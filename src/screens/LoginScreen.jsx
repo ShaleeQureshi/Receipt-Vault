@@ -10,6 +10,8 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 import RECEIPT_VAULT_LOGO from '../assets/images/ReceiptVault-logos.png';
 import {PrimaryButton, SecondaryButton} from '../components';
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   // Styles
@@ -75,7 +77,7 @@ const LoginScreen = () => {
     textInputViewPassword: {
       textAlignVertical: 'center',
       alignSelf: 'center',
-      top: Dimensions.get('window').height * 0.22,
+      marginTop: Dimensions.get('window').height * 0.24,
     },
     textInputPasswordHeading: {
       marginTop: 10,
@@ -99,15 +101,23 @@ const LoginScreen = () => {
       paddingRight: 5,
     },
     btnGrp: {
-      top: Dimensions.get('window').height * 0.1,
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
     },
   });
 
+  const navigation = useNavigation();
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const handleLogin = async () => {
+    const user = await auth().signInWithEmailAndPassword(email, password);
+    if (user) {
+      console.log(user);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -130,6 +140,8 @@ const LoginScreen = () => {
           placeholder="Please enter your email address"
           keyboardType="email-address"
           style={styles.textInputEmailBox}
+          autoCapitalize="none"
+          autoComplete="off"
         />
       </View>
       <View style={styles.textInputViewPassword}>
@@ -142,20 +154,22 @@ const LoginScreen = () => {
           secureTextEntry={true}
           placeholder="Please enter your password"
           style={styles.textInputPasswordBox}
+          autoCapitalize="none"
+          autoComplete="off"
         />
       </View>
       <View style={styles.btnGrp}>
         <PrimaryButton
           text="Login"
           onPress={() => {
-            console.log('logged in');
+            handleLogin();
           }}
         />
         <View style={{marginTop: 20}}>
           <SecondaryButton
             text="Don't have an Account?"
             onPress={() => {
-              console.log('no account in');
+              navigation.navigate('SignUp');
             }}
           />
         </View>
