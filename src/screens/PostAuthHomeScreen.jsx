@@ -50,6 +50,7 @@ const PostAuthHomeScreen = () => {
         <PrimaryButton
           text="Access Receipts"
           onPress={() => {
+            const userUid = auth().currentUser.uid;
             navigation.navigate('Receipt');
           }}
         />

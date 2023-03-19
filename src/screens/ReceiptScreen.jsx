@@ -55,11 +55,13 @@ const ReceiptScreen = () => {
       const snapshot2 = await database()
         .ref('/users/' + customKey + '/receipts')
         .once('value');
-      const info = snapshot2
-        .val()
-        .map(item => [item['info'].date, item['info'].location]);
+        if (snapshot2 && snapshot2.val()){
+          const info = snapshot2
+            .val()
+            .map(item => [item['info'].date, item['info'].location]);
 
-      setData(info);
+          setData(info);
+        }
     };
 
     fetchData();
