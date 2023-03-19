@@ -50,7 +50,7 @@ const PostAuthHomeScreen = () => {
         <PrimaryButton
           text="Access Receipts"
           onPress={() => {
-            navigation.navigate('Receipts');
+            navigation.navigate('Receipt');
           }}
         />
         <View style={{marginTop: 20}}></View>

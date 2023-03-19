@@ -5,3 +5,4 @@ export {default as SignUpScreen} from './SignUpScreen';
 export {default as PostAuthHomeScreen} from './PostAuthHomeScreen';
 export {default as VaultCodeScreen} from './VaultCodeScreen';
 export {default as ReceiptScreen} from './ReceiptScreen';
+export {default as ReceiptInfoScreen} from './ReceiptInfoScreen';
