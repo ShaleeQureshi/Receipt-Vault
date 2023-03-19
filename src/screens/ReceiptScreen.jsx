@@ -37,9 +37,6 @@ const ReceiptScreen = () => {
       alignContent: 'center',
       backgroundColor: '#DCDCDC',
     },
-    TableText: {
-      margin: 10,
-    },
   });
 
   const navigation = useNavigation();
@@ -52,16 +49,23 @@ const ReceiptScreen = () => {
         .once('value');
       const customKey = snapshot1.val();
       setCustomK(customKey);
-      const snapshot2 = await database()
-        .ref('/users/' + customKey + '/receipts')
+
+      const numberOfReceipts = await database()
+        .ref('/users/' + customKey + '/number_of_receipts')
         .once('value');
-        if (snapshot2 && snapshot2.val()){
+
+      if (numberOfReceipts.val() > 0) {
+        const snapshot2 = await database()
+          .ref('/users/' + customKey + '/receipts')
+          .once('value');
+        if (snapshot2 && snapshot2.val()) {
           const info = snapshot2
             .val()
             .map(item => [item['info'].date, item['info'].location]);
 
           setData(info);
         }
+      }
     };
 
     fetchData();
@@ -81,7 +85,7 @@ const ReceiptScreen = () => {
           <Row
             data={headings}
             style={styles.HeadStyle}
-            textStyle={styles.TableText}
+            textStyle={{margin: 10}}
           />
           {data.map((rowData, index) => (
             <TouchableOpacity
@@ -101,7 +105,7 @@ const ReceiptScreen = () => {
                 key={index}
                 data={rowData}
                 style={{backgroundColor: '#ffffff'}}
-                textStyle={styles.TableText}
+                textStyle={{margin: 10}}
               />
             </TouchableOpacity>
           ))}
