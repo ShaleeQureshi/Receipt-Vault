@@ -79,7 +79,6 @@ const ReceiptScreen = () => {
   const headings = ['Date', 'Location'];
   const [customK, setCustomK] = useState();
   const [data, setData] = useState([]);
-  const textStyle = {margin: 10};
 
   return (
     <SafeAreaView style={styles.container}>
@@ -110,7 +109,7 @@ const ReceiptScreen = () => {
               }}>
               <Row
                 key={index}
-                data={rowData}
+                data={[rowData[0], rowData[1]]}
                 style={{backgroundColor: '#ffffff'}}
                 textStyle={[{margin: 10, color: '#000000'}]}
               />
