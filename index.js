@@ -1,6 +1,11 @@
 const { initializeApp } = require('firebase/app');
 const { getDatabase, ref, set, child, push, update, onValue, get } = require('firebase/database');
 const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+app.use(cors());
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -12,7 +17,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app2 = initializeApp(firebaseConfig);
-const app = express();
 
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app2);
@@ -23,9 +27,10 @@ app.use(express.json());
 app.post('/receive-receipt', async (req, res) => {
     try {
       const receipt = req.body.receipt;
+      const receipt_info = receipt.pop().info;
       const uid = req.body.uid;
       
-        const number_of_receipts_ref = ref(database, `users/${uid}/number_of_receipts`);
+      const number_of_receipts_ref = ref(database, `users/${uid}/number_of_receipts`);
 
       // onValue(number_of_receipts_ref, (snapshot) => {
       //   const number_of_receipts = snapshot.val();
@@ -37,6 +42,7 @@ app.post('/receive-receipt', async (req, res) => {
           number_of_receipts = snapshot.val();
   
           const updates = {};
+          const second_updates = {};
 
           updates[`/users/${uid}/receipts/${number_of_receipts}`] = receipt;
           updates[`/users/${uid}/number_of_receipts`] = number_of_receipts + 1;
@@ -44,6 +50,16 @@ app.post('/receive-receipt', async (req, res) => {
           update(ref(database), updates)
             .then(() => {
               console.log('Success');
+            })
+            .catch((error) => {
+              console.error('Error: ', error);
+            });
+
+          second_updates[`/users/${uid}/receipts/${number_of_receipts}/info`] = receipt_info;
+
+          update(ref(database), second_updates)
+            .then(() => {
+              console.log('Success second update');
             })
             .catch((error) => {
               console.error('Error: ', error);
