@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import axios from "axios";
+
 const SendData = () => {
   const postData = async (id) => {
     const sendBody = {
@@ -27,19 +29,16 @@ const SendData = () => {
         },
       ],
     };
-    fetch("https://localhost:3000/receive-receipt", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: sendBody,
-    })
-      .then((response) => {
-        alert(response);
-      })
-      .catch((err) => {
-        alert(err);
+    try {
+      const res = await axios.post("http://localhost:3000/receive-receipt", sendBody, {
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
+      alert(res.data);
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
@@ -61,11 +60,13 @@ const SendData = () => {
                 "You have not scanned the customer's barcode.\nPlease scan the customer's barcode and try again."
               );
             }
-          }}>
+          }}
+        >
           Submit
         </Button>
       </div>
     </div>
   );
 };
+
 export default SendData;
