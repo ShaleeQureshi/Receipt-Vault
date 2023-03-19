@@ -8,6 +8,8 @@ import {
   SignUpScreen,
   PostAuthHomeScreen,
   VaultCodeScreen,
+  ReceiptScreen,
+  ReceiptInfoScreen,
 } from './screens';
 
 const Stack = createNativeStackNavigator();
@@ -57,6 +59,24 @@ const App = () => {
             component={VaultCodeScreen}
             options={{
               title: 'VaultCode',
+              headerTransparent: true,
+              headerTintColor: '#000000',
+            }}
+          />
+          <Stack.Screen
+            name="Receipt"
+            component={ReceiptScreen}
+            options={{
+              title: 'Receipts',
+              headerTransparent: true,
+              headerTintColor: '#000000',
+            }}
+          />
+          <Stack.Screen
+            name="Receipt-Info"
+            component={ReceiptInfoScreen}
+            options={{
+              title: 'Receipt Information',
               headerTransparent: true,
               headerTintColor: '#000000',
             }}
