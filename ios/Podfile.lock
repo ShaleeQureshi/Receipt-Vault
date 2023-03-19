@@ -396,6 +396,8 @@ PODS:
     - React-jsi (= 0.71.4)
     - React-logger (= 0.71.4)
     - React-perflogger (= 0.71.4)
+  - ReactNativeART (1.2.0):
+    - React
   - RNFBApp (17.3.2):
     - Firebase/CoreOnly (= 10.6.0)
     - React-Core
@@ -410,6 +412,8 @@ PODS:
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
+  - RNSVG (13.8.0):
+    - React-Core
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -449,10 +453,12 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "ReactNativeART (from `../node_modules/@react-native-community/art`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -538,6 +544,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeART:
+    :path: "../node_modules/@react-native-community/art"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBAuth:
@@ -546,6 +554,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/database"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -595,10 +605,12 @@ SPEC CHECKSUMS:
   React-RCTVibration: ad17efcfb2fa8f6bfd8ac0cf48d96668b8b28e0b
   React-runtimeexecutor: 8fa50b38df6b992c76537993a2b0553d3b088004
   ReactCommon: 34f9369c376d5f335069dda29552b3e7351b9ec6
+  ReactNativeART: 78edc68dd4a1e675338cd0cd113319cf3a65f2ab
   RNFBApp: dd22a306a31189e99126a35962498c83b06520ab
   RNFBAuth: c0dbc7680a3181e460fdc2b4ba80851363c6946d
   RNFBDatabase: 092d98672c640241688cc9f30e80576b075e2ff6
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
+  RNSVG: c1e76b81c76cdcd34b4e1188852892dc280eb902
   Yoga: 79dd7410de6f8ad73a77c868d3d368843f0c93e0
 
 PODFILE CHECKSUM: f58c178d2f2f553a157777dbb2607e8bfbf0f517

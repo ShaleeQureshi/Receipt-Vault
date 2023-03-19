@@ -139,7 +139,7 @@ const SignUpScreen = () => {
               console.log('User created and added to database successfully');
               console.log(user);
               console.log('**** Redirecting to PostAuthHomeScreen ****');
-              navigation.navigate('PostAuthHomeScreen');
+              navigation.navigate('PostAuthHome');
             })
             .catch(err => {
               console.log('***** RAN INTO THE FOLLOWING ERROR *******');
