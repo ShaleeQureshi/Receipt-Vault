@@ -15,6 +15,7 @@ import auth, {firebase} from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 
 const ReceiptScreen = () => {
+  console.disableYellowBox = true;
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#00CDAC',
@@ -61,7 +62,11 @@ const ReceiptScreen = () => {
         if (snapshot2 && snapshot2.val()) {
           const info = snapshot2
             .val()
-            .map(item => [item['info'].date, item['info'].location]);
+            .map(item => [
+              item['info'].date,
+              item['info'].location,
+              item['info'].transaction_id,
+            ]);
 
           setData(info);
         }
@@ -74,6 +79,7 @@ const ReceiptScreen = () => {
   const headings = ['Date', 'Location'];
   const [customK, setCustomK] = useState();
   const [data, setData] = useState([]);
+  const textStyle = {margin: 10};
 
   return (
     <SafeAreaView style={styles.container}>
@@ -85,7 +91,7 @@ const ReceiptScreen = () => {
           <Row
             data={headings}
             style={styles.HeadStyle}
-            textStyle={{margin: 10}}
+            textStyle={[{margin: 10, color: '#000000'}]}
           />
           {data.map((rowData, index) => (
             <TouchableOpacity
@@ -96,6 +102,7 @@ const ReceiptScreen = () => {
                   data: {
                     location: rowData[0],
                     date: rowData[1],
+                    transaction_id: rowData[2],
                     index: index,
                     customKey: customK,
                   },
@@ -105,7 +112,7 @@ const ReceiptScreen = () => {
                 key={index}
                 data={rowData}
                 style={{backgroundColor: '#ffffff'}}
-                textStyle={{margin: 10}}
+                textStyle={[{margin: 10, color: '#000000'}]}
               />
             </TouchableOpacity>
           ))}

@@ -73,6 +73,7 @@ const LoginScreen = () => {
       paddingTop: 5,
       paddingBottom: 5,
       paddingRight: 5,
+      color: '#000000',
     },
     textInputViewPassword: {
       textAlignVertical: 'center',
@@ -99,6 +100,7 @@ const LoginScreen = () => {
       paddingTop: 5,
       paddingBottom: 5,
       paddingRight: 5,
+      color: '#000000',
     },
     btnGrp: {
       flex: 1,

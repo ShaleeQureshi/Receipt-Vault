@@ -14,7 +14,7 @@ const VaultCodeScreen = () => {
       color: '#ffffff',
       fontWeight: 'bold',
       fontSize: 20,
-      marginTop: 20,
+      marginTop: 70,
     },
     barcodeParentContainer: {
       flex: 1,
@@ -23,8 +23,8 @@ const VaultCodeScreen = () => {
     },
     barcodeContainer: {
       backgroundColor: '#ffffff',
-      width: 500,
-      marginLeft: -50,
+      width: 480,
+      marginLeft: -40,
     },
   });
 

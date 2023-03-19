@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, View, Text, Dimensions} from 'react-native';
 import database from '@react-native-firebase/database';
+import Barcode from 'react-native-barcode-builder';
 
 const ReceiptInfoScreen = ({route}) => {
   const {data} = route.params;
@@ -185,6 +186,7 @@ const ReceiptInfoScreen = ({route}) => {
             alignSelf: 'center',
           }}
         />
+        <Barcode width={3} value={data.transaction_id} />
       </View>
     </SafeAreaView>
   );
