@@ -115,7 +115,10 @@ const LoginScreen = () => {
   const handleLogin = async () => {
     const user = await auth().signInWithEmailAndPassword(email, password);
     if (user) {
+      console.log('Successfully logged in user');
       console.log(user);
+      console.log('**** Redirecting to PostAuthHomeScreen ****');
+      navigation.navigate('PostAuthHomeScreen');
     }
   };
 
