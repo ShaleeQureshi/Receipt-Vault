@@ -71,6 +71,7 @@ const SignUpScreen = () => {
       paddingTop: 5,
       paddingBottom: 5,
       paddingRight: 5,
+      color: '#000000',
     },
     textInputViewPassword: {
       textAlignVertical: 'center',
@@ -94,6 +95,7 @@ const SignUpScreen = () => {
       paddingTop: 5,
       paddingBottom: 5,
       paddingRight: 5,
+      color: '#000000',
     },
     textInputViewConfirmPassword: {
       textAlignVertical: 'center',
@@ -136,10 +138,12 @@ const SignUpScreen = () => {
               number_of_receipts: 0,
             })
             .then(() => {
-              const userUID = user.user.uid
-              database().ref("/users/uid/").update({
-                userUID: id
-              })
+              const userUID = user.user.uid;
+              database()
+                .ref('/users/uids/')
+                .update({
+                  [userUID]: id,
+                });
               console.log('User created and added to database successfully');
               console.log(user);
               console.log('**** Redirecting to PostAuthHomeScreen ****');
